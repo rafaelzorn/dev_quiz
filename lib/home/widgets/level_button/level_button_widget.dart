@@ -1,14 +1,13 @@
 import 'package:dev_quiz/core/app_colors.dart';
-import 'package:dev_quiz/core/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LevelButtonWidget extends StatelessWidget {
-  final String label;
   LevelButtonWidget({Key? key, required this.label})
       : assert(["Fácil", "Médio", "Difícil", "Perito"].contains(label)),
         super(key: key);
 
+  final String label;
   final config = {
     "Fácil": {
       "color": AppColors.levelButtonFacil,
@@ -40,16 +39,20 @@ class LevelButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(28),
-          color: color,
-          border: Border.fromBorderSide(
-            BorderSide(color: borderColor),
-          )),
+        color: color,
+        border: Border.fromBorderSide(
+          BorderSide(color: borderColor),
+        ),
+        borderRadius: BorderRadius.circular(28),
+      ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 19, vertical: 6),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 6),
         child: Text(
           label,
-          style: GoogleFonts.notoSans(color: fontColor, fontSize: 13),
+          style: GoogleFonts.notoSans(
+            color: fontColor,
+            fontSize: 13,
+          ),
         ),
       ),
     );
