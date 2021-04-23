@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:collection/collection.dart';
+
 import 'package:dev_quiz/shared/models/question_model.dart';
 
 enum Level {
@@ -79,10 +80,13 @@ class QuizModel {
     );
   }
 
-  String toJson() => json.encode(toMap());
+  String toJson() {
+    return json.encode(toMap());
+  }
 
-  factory QuizModel.fromJson(String source) =>
-      QuizModel.fromMap(json.decode(source));
+  factory QuizModel.fromJson(String source) {
+    return QuizModel.fromMap(json.decode(source));
+  }
 
   @override
   String toString() {
@@ -91,7 +95,10 @@ class QuizModel {
 
   @override
   bool operator ==(Object other) {
-    if (identical(this, other)) return true;
+    if (identical(this, other)) {
+      return true;
+    }
+
     final listEquals = const DeepCollectionEquality().equals;
 
     return other is QuizModel &&

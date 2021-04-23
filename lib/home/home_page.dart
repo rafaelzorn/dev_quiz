@@ -75,6 +75,7 @@ class _HomePageState extends State<HomePage> {
                       .map(
                         (e) => QuizCardWidget(
                           title: e.title,
+                          image: e.imagem,
                           percent: e.questionsAnswered / e.questions.length,
                           completed:
                               "${e.questionsAnswered}/${e.questions.length}",
@@ -84,6 +85,7 @@ class _HomePageState extends State<HomePage> {
                               MaterialPageRoute(
                                 builder: (context) => ChallengePage(
                                   questions: e.questions,
+                                  title: e.title,
                                 ),
                               ),
                             );

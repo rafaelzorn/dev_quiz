@@ -1,18 +1,12 @@
 import 'dart:convert';
 
 class AnswerModel {
-  AnswerModel({
-    required this.title,
-    this.isRight = false,
-  });
+  AnswerModel({required this.title, this.isRight = false});
 
   final String title;
   final bool isRight;
 
-  AnswerModel copyWith({
-    String? title,
-    bool? isRight,
-  }) {
+  AnswerModel copyWith({String? title, bool? isRight}) {
     return AnswerModel(
       title: title ?? this.title,
       isRight: isRight ?? this.isRight,
@@ -20,30 +14,31 @@ class AnswerModel {
   }
 
   Map<String, dynamic> toMap() {
-    return {
-      'title': title,
-      'isRight': isRight,
-    };
+    return {'title': title, 'isRight': isRight};
   }
 
   factory AnswerModel.fromMap(Map<String, dynamic> map) {
-    return AnswerModel(
-      title: map['title'],
-      isRight: map['isRight'] ?? false,
-    );
+    return AnswerModel(title: map['title'], isRight: map['isRight'] ?? false);
   }
 
-  String toJson() => json.encode(toMap());
+  String toJson() {
+    return json.encode(toMap());
+  }
 
-  factory AnswerModel.fromJson(String source) =>
-      AnswerModel.fromMap(json.decode(source));
+  factory AnswerModel.fromJson(String source) {
+    return AnswerModel.fromMap(json.decode(source));
+  }
 
   @override
-  String toString() => 'AnswerModel(title: $title, isRight: $isRight)';
+  String toString() {
+    return 'AnswerModel(title: $title, isRight: $isRight)';
+  }
 
   @override
   bool operator ==(Object other) {
-    if (identical(this, other)) return true;
+    if (identical(this, other)) {
+      return true;
+    }
 
     return other is AnswerModel &&
         other.title == title &&
@@ -51,5 +46,7 @@ class AnswerModel {
   }
 
   @override
-  int get hashCode => title.hashCode ^ isRight.hashCode;
+  int get hashCode {
+    return title.hashCode ^ isRight.hashCode;
+  }
 }

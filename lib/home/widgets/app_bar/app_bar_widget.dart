@@ -40,7 +40,8 @@ class AppBarWidget extends PreferredSize {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(
-                              image: NetworkImage(user.photoUrl)),
+                              image: NetworkImage(
+                                  user.photoUrl)),
                         ),
                       ),
                     ],
@@ -48,7 +49,7 @@ class AppBarWidget extends PreferredSize {
                 ),
                 Align(
                   alignment: Alignment(0.0, 1.2),
-                  child: ScoreCardWidget(),
+                  child: ScoreCardWidget(percent: user.score / 100,),
                 ),
               ],
             ),
