@@ -41,19 +41,21 @@ class UserModel {
 
   String toJson() => json.encode(toMap());
 
-  factory UserModel.fromJson(String source) => UserModel.fromMap(json.decode(source));
+  factory UserModel.fromJson(String source) =>
+      UserModel.fromMap(json.decode(source));
 
   @override
-  String toString() => 'UserModel(name: $name, photoUrl: $photoUrl, score: $score)';
+  String toString() =>
+      'UserModel(name: $name, photoUrl: $photoUrl, score: $score)';
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is UserModel &&
-      other.name == name &&
-      other.photoUrl == photoUrl &&
-      other.score == score;
+        other.name == name &&
+        other.photoUrl == photoUrl &&
+        other.score == score;
   }
 
   @override

@@ -1,7 +1,5 @@
 import 'dart:convert';
-
 import 'package:collection/collection.dart';
-
 import 'package:dev_quiz/shared/models/answer_model.dart';
 
 class QuestionModel {
@@ -33,13 +31,15 @@ class QuestionModel {
   factory QuestionModel.fromMap(Map<String, dynamic> map) {
     return QuestionModel(
       title: map['title'],
-      answers: List<AnswerModel>.from(map['answers']?.map((x) => AnswerModel.fromMap(x))),
+      answers: List<AnswerModel>.from(
+          map['answers']?.map((x) => AnswerModel.fromMap(x))),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory QuestionModel.fromJson(String source) => QuestionModel.fromMap(json.decode(source));
+  factory QuestionModel.fromJson(String source) =>
+      QuestionModel.fromMap(json.decode(source));
 
   @override
   String toString() => 'QuestionModel(title: $title, answers: $answers)';
@@ -48,10 +48,10 @@ class QuestionModel {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     final listEquals = const DeepCollectionEquality().equals;
-  
+
     return other is QuestionModel &&
-      other.title == title &&
-      listEquals(other.answers, answers);
+        other.title == title &&
+        listEquals(other.answers, answers);
   }
 
   @override

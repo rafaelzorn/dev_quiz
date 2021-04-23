@@ -40,8 +40,7 @@ class AppBarWidget extends PreferredSize {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(
-                              image: NetworkImage(
-                                  user.photoUrl)),
+                              image: NetworkImage(user.photoUrl)),
                         ),
                       ),
                     ],

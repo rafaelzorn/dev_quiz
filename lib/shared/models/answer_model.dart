@@ -35,7 +35,8 @@ class AnswerModel {
 
   String toJson() => json.encode(toMap());
 
-  factory AnswerModel.fromJson(String source) => AnswerModel.fromMap(json.decode(source));
+  factory AnswerModel.fromJson(String source) =>
+      AnswerModel.fromMap(json.decode(source));
 
   @override
   String toString() => 'AnswerModel(title: $title, isRight: $isRight)';
@@ -43,10 +44,10 @@ class AnswerModel {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is AnswerModel &&
-      other.title == title &&
-      other.isRight == isRight;
+        other.title == title &&
+        other.isRight == isRight;
   }
 
   @override
