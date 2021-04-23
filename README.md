@@ -20,3 +20,5 @@ Application developed with Flutter during Rocketseat's Next Level Week #5. It is
 ## Used technologies
 
 - Flutter
+- Share Plus
+- Other Flutter libs
