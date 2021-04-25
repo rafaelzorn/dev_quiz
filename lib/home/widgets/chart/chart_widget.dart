@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import 'package:dev_quiz/core/app_colors.dart';
 import 'package:dev_quiz/core/core.dart';
-import 'package:flutter/material.dart';
 
 class ChartWidget extends StatefulWidget {
   const ChartWidget({Key? key, required this.percent}) : super(key: key);

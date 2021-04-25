@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+
 import 'package:dev_quiz/core/app_colors.dart';
-import 'package:dev_quiz/core/app_images.dart';
 import 'package:dev_quiz/core/app_text_styles.dart';
 import 'package:dev_quiz/shared/widgets/progress_indicator/progress_indicator_widget.dart';
-import 'package:flutter/material.dart';
 
 class QuizCardWidget extends StatelessWidget {
   const QuizCardWidget({
@@ -43,16 +43,12 @@ class QuizCardWidget extends StatelessWidget {
               width: 40,
               child: Image.asset(image),
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
             Text(
               title,
               style: AppTextStyles.heading15,
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
             Row(
               children: [
                 Expanded(

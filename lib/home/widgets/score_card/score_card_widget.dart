@@ -1,10 +1,10 @@
+import 'package:flutter/material.dart';
+
 import 'package:dev_quiz/core/app_colors.dart';
 import 'package:dev_quiz/core/core.dart';
 import 'package:dev_quiz/home/widgets/chart/chart_widget.dart';
-import 'package:flutter/material.dart';
 
 class ScoreCardWidget extends StatelessWidget {
-
   const ScoreCardWidget({Key? key, required this.percent}) : super(key: key);
   final double percent;
 
@@ -17,10 +17,10 @@ class ScoreCardWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.white,
           border: Border.fromBorderSide(
-          BorderSide(
-            color: AppColors.border,
+            BorderSide(
+              color: AppColors.border,
+            ),
           ),
-        ),
           borderRadius: BorderRadius.circular(15),
         ),
         child: Padding(

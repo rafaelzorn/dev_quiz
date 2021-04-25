@@ -1,10 +1,11 @@
+import 'package:flutter/material.dart';
+
 import 'package:dev_quiz/challenge/challenge_controller.dart';
 import 'package:dev_quiz/challenge/widgets/next_button/next_button_widget.dart';
 import 'package:dev_quiz/challenge/widgets/question_indicator/question_indicator_widget.dart';
 import 'package:dev_quiz/challenge/widgets/quiz/quiz_widget.dart';
 import 'package:dev_quiz/result/result_page.dart';
 import 'package:dev_quiz/shared/models/question_model.dart';
-import 'package:flutter/material.dart';
 
 class ChallengePage extends StatefulWidget {
   final List<QuestionModel> questions;
@@ -26,21 +27,24 @@ class _ChallengePageState extends State<ChallengePage> {
     pageController.addListener(() {
       controller.currentPage = pageController.page!.toInt() + 1;
     });
+
     super.initState();
   }
 
   void nextPage() {
-    if (controller.currentPage < widget.questions.length)
+    if (controller.currentPage < widget.questions.length) {
       pageController.nextPage(
         duration: Duration(milliseconds: 100),
         curve: Curves.linear,
       );
+    }
   }
 
   void onSelected(bool value) {
     if (value) {
       controller.correctAnswers++;
     }
+    
     nextPage();
   }
 
