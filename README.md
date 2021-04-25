@@ -10,6 +10,10 @@ Application developed with Flutter during Rocketseat's Next Level Week #5. It is
 
 ## Preview
 
+<img src="./preview.gif" height="500">
+
+![Dev Quiz](./preview.png)
+
 ## Running the project
 
 - You need to set up all the Flutter enviroment
